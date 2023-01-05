@@ -18,6 +18,9 @@ const char *disk_perc(const char *path);
 const char *disk_total(const char *path);
 const char *disk_used(const char *path);
 
+/* dns */
+const char *getdns(void);
+
 /* entropy */
 const char *entropy(void);
 

@@ -10,6 +10,7 @@ COM =\
 	components/cpu\
 	components/datetime\
 	components/disk\
+	components/dns \
 	components/entropy\
 	components/hostname\
 	components/ip\
