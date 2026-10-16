@@ -70,6 +70,13 @@ const char *swap_used(void);
 
 /* temperature */
 const char *temp(const char *);
+const char *hwmon_temp(const char *);
+
+/* dwm status colour scheme bytes (see SchemeNorm etc. in dwm) */
+#define STATUS_NORM "\x01"
+#define STATUS_WARN "\x03"
+#define STATUS_CRIT "\x04"
+extern const unsigned int temp_warn, temp_crit;
 
 /* uptime */
 const char *uptime(void);

@@ -3,6 +3,10 @@
 /* interval between updates (in ms) */
 const unsigned int interval = 1000;
 
+/* hwmon_temp thresholds in degrees C (9950X3D Tjmax is 95) */
+const unsigned int temp_warn = 80;
+const unsigned int temp_crit = 90;
+
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
 
@@ -51,6 +55,7 @@ static const char unknown_str[] = "n/a";
  * swap_total          total swap size in GB           NULL
  * swap_used           used swap in GB                 NULL
  * temp                temperature in degree celsius   sensor file
+ * hwmon_temp          temperature in degree celsius   hwmon name (k10temp)
  *                                                     (/sys/class/thermal/...)
  *                                                     NULL on OpenBSD
  *                                                     thermal zone on FreeBSD
@@ -64,12 +69,12 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function 	format          argument */
-	{ getdns, 		"DNS=%s",		NULL	},
-	{ separator,	" | ",			NULL	},
-	{ load_avg,		"%s",			NULL	},
-	{ separator,	" | ",			NULL	},
-	{ temp, 		" %s",			"/sys/class/thermal/thermal_zone10/temp"	},
-	{ datetime, 	"%s",           " [ %F %T ]" },
+	/* function 	  format          argument */
+	{ run_command, 	"%s",	          "/home/brownjo/bin/vpn.sh"	},
+	{ separator,	  " | ",		    	NULL	},
+	{ load_avg,		  "%s",			      NULL	},
+	{ separator,	  " | ",			    NULL	},
+	{ hwmon_temp,   "%s󰔄" STATUS_NORM,	    "k10temp"	},
+	{ datetime,     "%s",           " [ %F %T ]" },
 
 };
