@@ -4,8 +4,8 @@
 const unsigned int interval = 1000;
 
 /* hwmon_temp thresholds in degrees C (9950X3D Tjmax is 95) */
-const unsigned int temp_warn = 80;
-const unsigned int temp_crit = 90;
+const unsigned int temp_warn = 70;
+const unsigned int temp_crit = 85;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
