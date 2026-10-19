@@ -70,11 +70,12 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function 	  format          argument */
-	{ run_command, 	"%s",	          "/home/brownjo/bin/vpn.sh"	},
-	{ separator,	  " | ",		    	NULL	},
-	{ load_avg,		  "%s",			      NULL	},
-	{ separator,	  " | ",			    NULL	},
-	{ hwmon_temp,   "%s󰔄" STATUS_NORM,	    "k10temp"	},
-	{ datetime,     "%s",           " [ %F %T ]" },
+  { run_command, "%s | ", "cat ~/.cache/pkg-updates 2>/dev/null" },
+  { run_command, 	"%s",	          "/home/brownjo/bin/vpn.sh"	},
+  { separator,	  " | ",		    	NULL	},
+  { load_avg,		  "%s",			      NULL	},
+  { separator,	  " | ",			    NULL	},
+  { hwmon_temp,   "%s󰔄" STATUS_NORM,	    "k10temp"	},
+  { datetime,     "%s",           " [ %F %T ]" },
 
 };
